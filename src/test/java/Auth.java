@@ -13,6 +13,10 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
+// Test case flow for the Generating an Token , Get the Product List,Show the Product List
+//Post call to add an new item to cart (new entity will be created)
+//To view the Cart
+// Delete the cart
 
 public class Auth {
     String authtoken = null;
@@ -160,19 +164,7 @@ public class Auth {
 
 
 
-    @Test
-    public void getCurrencyDetails() {
-        Response res = given().log().all()
-                .get("https://spree-vapasi-prod.herokuapp.com/api/v2/storefront/products");
-        JsonPath jsonpathevaluator = res.jsonPath();
-        List<Map> products = jsonpathevaluator.getList("data");
-        for (Map product : products) {
-            Map attributes = (Map) product.get("attributes");
-            System.out.println(attributes.get("currency"));
-            Assert.assertEquals(attributes.get("currency").toString(), "USD");
 
 
-        }
 
-    }
 }

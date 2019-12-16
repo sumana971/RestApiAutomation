@@ -39,7 +39,7 @@ public class Basic_Api {
 
 
     }
-
+//Validate the content type is JSON
     @Test
     public void getApiTest2()
     {
@@ -56,7 +56,7 @@ public class Basic_Api {
     }
 
 
-
+//Validate Currency details
     @Test
     public void getCurrencyDetails()
     {
